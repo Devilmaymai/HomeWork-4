@@ -118,7 +118,22 @@ PS.為節省版面這裡就不附上結果的圖片，而結果於程式中有�
 
 若是要再進一步改善Clustering的表現，增加Attribute可能是一個不錯的方法，例如：國籍、性別、年齡等。
 
-此外user的評分標準化也可能一個不錯的方式。
+此外user的評分標準化也可能一個不錯的方式。因此接下來，把user的評分標準化又進行了一次嘗試。
+
+### ．Standardized data
+這裡採用的模式是將各user的評分獨自標準化的方式，將標準化後的評分利用Hierarchical clustering與K-means clustering，再進行一次前面的分析。
+由於DBSCAN在前面的分析時表現相當不好，所以這裡就沒有針對DBSCAN進行嘗試。
+
+所做出來的評估結果如下，與未標準化的資料相比，並沒有太多的差別。
+
+至於視覺化的部分則在程式中呈現。
+#### Hierarchical Clustering
+
+![](https://imgur.com/I0PzBG9.png)
+
+#### K-means
+
+![](https://imgur.com/12XlwmW.png)
 
 ### Future
 
