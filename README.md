@@ -20,7 +20,7 @@ churches、resorts、beaches、parks、theatres、museums、malls、zoo、restau
 
 而由於評分的範圍是一致的，所以就不針對分數rescale。初步處理完的資料如下：
 
-![](.png)
+![](https://imgur.com/elXE9Uv.png)
 
 ## Analysis
 
@@ -97,6 +97,36 @@ PS.為節省版面這裡就不附上結果的圖片，而結果於程式中有�
 
 ### K-means
 
+不同cluster munber下的K-Means clistering performance如下，左邊為Silhouette Coefficient，右邊為Calinski-Harabasz Index。
+
+![](https://imgur.com/pXeCH4U.png)
+
+可以看出在同樣的cluster munber下K-Means clistering的performance相對較Hierarchical Clustering好。而視覺化的結果如下。
+
+![](https://imgur.com/gh3Z5b0.png)
+
 #### Summary
 
+用K-means做clustering的表現較Hierarchical Clustering好，但一樣無法明確指出最佳分群數。不過兩者出現了相當的一致性。
+
 ## Discussion
+
+由Hierarchical Clustering及K-Means clistering的結果，算是初步證實了前面的假設，user的評分模式是可以分群的。
+
+也就是說user大致可以歸類出數種評分趨勢。只是"數種"是幾種，就無法做有效地確認。
+僅可以由Silhouette Coefficient和Calinski-Harabasz Index的分析結果，與視覺化呈現的結果，推測2~4個cluster為較理想的分群。
+
+若是要再進一步改善Clustering的表現，增加Attribute可能是一個不錯的方法，例如：國籍、性別、年齡等。
+
+此外user的評分標準化也可能一個不錯的方式。
+
+### Future
+
+若是能由評分資料就將使用者分群，將會比做語意分析簡單及快速許多。而若能將這樣的分群做進一步的定義，則可以在觀光的行銷及推廣上，做出更精準的操作。
+
+### WHY this data
+
+最後，之所以會選擇份資料做分析是因為，這種沒有ground truth的資料比較是生物領域會接觸到的類型。
+而希望藉由這樣的練習，模擬之後所會面臨的情況與處理邏輯。
+例如精準醫療的目的就是利用一些較客觀的數據資料將人類分群，再輔以醫療反應定義，讓治療或藥物能夠得到更精準的應用與更好的反饋。
+
